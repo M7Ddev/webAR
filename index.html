@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lab 1: Marker-Based WebAR</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-marker preset="hiro">
+
+      <!-- Shape 1: Rotating Box (center) -->
+      <a-box
+        position="0 0.5 0"
+        scale="0.5 0.5 0.5"
+        material="color: #E74C3C;"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear">
+      </a-box>
+
+      <!-- Shape 2: Sphere (left) -->
+      <a-sphere
+        position="-0.8 0.4 0"
+        scale="0.35 0.35 0.35"
+        material="color: #3498DB;"
+        animation="property: position; to: -0.8 0.7 0; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine">
+      </a-sphere>
+
+      <!-- Shape 3: Cylinder (right) -->
+      <a-cylinder
+        position="0.8 0.5 0"
+        scale="0.3 0.6 0.3"
+        material="color: #2ECC71;"
+        animation="property: scale; to: 0.3 0.9 0.3; dir: alternate; loop: true; dur: 2500; easing: easeInOutQuad">
+      </a-cylinder>
+
+      <!-- Shape 4: Torus (back) -->
+      <a-torus
+        position="0 0.5 -0.9"
+        scale="0.35 0.35 0.35"
+        material="color: #F39C12;"
+        animation="property: rotation; to: 360 0 0; loop: true; dur: 3000; easing: linear">
+      </a-torus>
+
+      <!-- Student Name -->
+      <a-text
+        value="Mohammed Alghifari"
+        position="0 1.5 0"
+        align="center"
+        color="#FFFFFF"
+        width="5"
+        animation="property: scale; from: 1 1 1; to: 1.1 1.1 1.1; dir: alternate; loop: true; dur: 1500">
+      </a-text>
+
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
